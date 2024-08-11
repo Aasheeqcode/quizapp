@@ -9,7 +9,10 @@ let wrapper=document.getElementById("wrapper");
 let score=document.getElementById("wscore");
 let result=document.getElementById("result");
 let ccount=0;
-let link="https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+const urlParams = new URLSearchParams(location.search)
+const topicID = urlParams.get("topic")
+let link=`https://opentdb.com/api.php?amount=10&category=${topicID}&difficulty=easy&type=multiple`
+
 async function load(){
     fetch(link).then(res=>res.json()).then(res=>{
         const data=res.results;
