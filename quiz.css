@@ -85,19 +85,11 @@ h2{
 }
 #main #play{
     display: flex;
-    flex-direction: column;
-}
-#main #play .row{
-    display: flex;
-    justify-content: space-between;
+    height:auto;
+    justify-content: space-around;
     flex-wrap: wrap;
-    background: #fbfafa;
-    margin-bottom: 24px;
-    box-shadow: 10px 10px 15px #333;
-    padding: 12px 12px;
-    border-radius: 9px;
 }
-#main #play .row .card{
+#main #play .card{
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -117,6 +109,13 @@ h2{
     background:var(--primary);
     cursor: pointer;
 }
+.normal a{
+    text-decoration: none;
+    color:#222;
+}
 .normal:hover{
+    background: #0af4e4;
+}
+.normal:hover a{
     background: #0af4e4;
 }
