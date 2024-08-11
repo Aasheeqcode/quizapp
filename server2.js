@@ -17,8 +17,21 @@ app.use(express.json())
 app.get("/",(req,res)=>{
     res.status(200).sendFile(path.join(process.cwd(),'index.html'));
 })
-app.post("/create-user",(req,res)=>{
-    const data =req.body 
+app.get("/check-email/:email", (req, res) => {
+    const email = req.params.email;
+    SignModel.findOne({Email: email })
+      .then(user => {
+        if (user) {
+          res.status(200).json({ exists: true });
+        } else {
+          res.status(200).json({ exists: false });
+        }
+      })
+      .catch(err => res.status(500).json({ error: err.message }));
+  });
+app.post("/create-user",(req,res)=>{ 
+    const data =req.body;
+    console.log(data);
     SignModel.create(data).then(()=>{
         res.status(200).json({
             err:false,
@@ -29,29 +42,22 @@ app.post("/create-user",(req,res)=>{
 });
 app.post("/signin", (req, res) => {
     const { email, password } = req.body;
-  
-    SignModel.findOne({ email: email })
+    SignModel.findOne({Email: email})
       .then(user => {
-        if (!user) {
+        console.log("USER"+user);
+        if (!user) {  
           res.status(401).json({ success: false, message: "Invalid email or password." });
-          return;
+          return;  
         }
-  
-        // Compare the provided password with the hashed password stored in the database
-        bcrypt.compare(password, user.password, (err, isMatch) => {
-          if (err) {
-            res.status(500).json({ success: false, message: "Error comparing passwords." });
-            return;
-          }
-  
-          if (isMatch) {
-            res.status(200).json({ success: true });
-          } else {
-            res.status(401).json({ success: false, message: "Invalid email or password." });
-          }
-        });
+        console.log("USER"+user.Password);
+        if(user.Password!=password){
+            res.status(401).json({ success: false, message: "Invalid email or password." });
+        }
+        else{
+            res.status(200).json({success:true});
+        }
       })
-      .catch(err => res.status(500).json({ success: false, message: err.message }));
+      .catch(err => res.status(500).json({ success: false, message: err.message}));
   });
 app.listen(5000,()=>{
     console.log('Server listening at port 5000')
