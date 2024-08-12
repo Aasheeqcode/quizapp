@@ -119,3 +119,87 @@ h2{
 .normal:hover a{
     background: #0af4e4;
 }
+@media (max-width:1400px){
+    #main aside{
+      display: none;
+    }
+}
+@media (max-width:1200px){
+    #main #play{
+        justify-content:space-between;
+        width:100%;
+    }
+    #main #play .card{
+        width:30%;
+        margin-top: 23px;
+    }
+}
+@media (max-width:845px){
+    #main #play{
+        justify-content:space-between;
+        width:100%;
+    }
+    #main #play .card{
+        width:45%;
+        margin-top: 23px;
+    }
+}
+@media (max-width:630px){
+    #main{
+        padding: 20px 13px;
+    }
+    #main #play{
+        justify-content:space-between;
+        width:100%;
+    }
+    #main #play .card{
+        width:49%;
+        margin-top: 23px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    #header #navbar li a{
+        font-size: 13px;
+        padding:0 6px;
+    }
+}
+@media (max-width:550px){
+    #main{
+        padding: 20px 13px;
+    }
+    #main #play{
+        justify-content:space-between;
+        width:100%;
+    }
+    #main #play .card{
+        width:98%;
+        margin-top: 23px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    #header #navbar li a{
+        font-size: 13px;
+        padding:0 6px;
+    }
+}
+@media (max-width:330px){
+    #main{
+        padding: 20px 13px;
+    }
+    #main #play{
+        justify-content:center;
+        width:100%;
+    }
+    #main #play .card{
+        width:330px;
+        height:auto;
+    }
+    h1{
+        font-size: 20px;
+    }
+    #header #navbar{
+        display: none;
+    }
+}
