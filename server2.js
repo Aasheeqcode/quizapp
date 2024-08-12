@@ -5,7 +5,7 @@ import cors from "cors";
 const app=express();
 app.use(cors());
 app.use("/",express.static("C:/Users/sabik/Downloads/Quiz"))
-mongoose.connect("mongodb://localhost:27017/quizuserSign").then(()=>console.log("Hi"));
+mongoose.connect("mongodb+srv://mohameedaasheeq1:Itboy%402006@cluster0.vxhjvv3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>console.log("Hi"));
 const signtemplate=mongoose.Schema({
     FirstName:String,
     LastName:String,
