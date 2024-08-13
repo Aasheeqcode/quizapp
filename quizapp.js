@@ -12,9 +12,9 @@ let ccount=0;
 const urlParams = new URLSearchParams(location.search)
 const topicID = urlParams.get("topic")
 let link=`https://opentdb.com/api.php?amount=10&category=${topicID}&difficulty=easy&type=multiple`
-
 async function load(){
     fetch(link).then(res=>res.json()).then(res=>{
+        let checked=false;
         const data=res.results;
         question=data[0].question;
         options=[]
@@ -78,11 +78,20 @@ wrapper.style.display="block";
             else{
                 locked.style.background="#ef0d50";
             }
+            checked=true;
         }
     }).catch(err=>console.log(err)
     );
 }
 load();
+document.getElementById("next").onclick=(){
+    if(checked==true){
+    load();
+    }
+    else {
+        window.alert("click check");
+    }
+}
 document.getElementById("exit").onclick=function(){
     window.location.href="quiz.html"
 }
