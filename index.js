@@ -3,7 +3,8 @@ let btn=["Explore Now","Get Started","Practice Now","Try Now","Make Test"]
 let i=0;
 let isopenl=false;
 let isopenr=false;
-alert("Due to some mongo connection string currently our db is in issue but you can access our quiz app by open button");
+window.alert("Due to some mongo connection string Issue");
+window.alert("But you can access quiz app by open button");
 alert("Enjoy 😜");
 setInterval(()=>{
    document.getElementById("change").innerHTML=titles[i%titles.length];
