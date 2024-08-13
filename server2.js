@@ -17,18 +17,7 @@ app.use(express.json())
 app.get("/",(req,res)=>{
     res.status(200).sendFile(path.join(process.cwd(),'index.html'));
 })
-app.get("/check-email/:email", (req, res) => {
-    const email = req.params.email;
-    SignModel.findOne({Email: email })
-      .then(user => {
-        if (user) {
-          res.status(200).json({ exists: true });
-        } else {
-          res.status(200).json({ exists: false });
-        }
-      })
-      .catch(err => res.status(500).json({ error: err.message }));
-  });
+
 app.post("/create-user",(req,res)=>{ 
     const data =req.body;
     console.log(data);
