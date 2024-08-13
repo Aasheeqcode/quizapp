@@ -12,9 +12,10 @@ let ccount=0;
 const urlParams = new URLSearchParams(location.search)
 const topicID = urlParams.get("topic")
 let link=`https://opentdb.com/api.php?amount=10&category=${topicID}&difficulty=easy&type=multiple`
+let checked=false;
 async function load(){
     fetch(link).then(res=>res.json()).then(res=>{
-        let checked=false;
+        checked=false;
         const data=res.results;
         question=data[0].question;
         options=[]
@@ -70,7 +71,7 @@ wrapper.style.display="block";
         })
     }).
     then(()=>{
-        function check(){
+        document.getElementById("check").onclick=function(){
             if(locked.innerHTML===crct){
                 locked.style.background="#00ff00";
                 ccount+=1;
@@ -84,7 +85,7 @@ wrapper.style.display="block";
     );
 }
 load();
-document.getElementById("next").onclick=(){
+document.getElementById("next").onclick=function(){
     if(checked==true){
     load();
     }
