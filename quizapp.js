@@ -70,8 +70,7 @@ wrapper.style.display="block";
         })
     }).
     then(()=>{
-        document.getElementById("check").onclick=function(){
-
+        function check(){
             if(locked.innerHTML===crct){
                 locked.style.background="#00ff00";
                 ccount+=1;
