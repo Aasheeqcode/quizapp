@@ -103,3 +103,6 @@ function signin() {
         console.error("Error:", error);
  });
 }
+function open(){
+   window.location.href='quiz.html'
+}
