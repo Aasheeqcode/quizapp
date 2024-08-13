@@ -79,7 +79,7 @@ main .card h3{
     border:2px solid #1ba098;
     margin-top: 23px;
     padding: 12px;
-    background: #1ba098;
+    background: #e2252b;
     cursor: pointer;
     border-radius: 12px;
     width:80%;
@@ -96,17 +96,19 @@ main .card h3{
 button{
     width:180px;
     height:70px;
-    background: #1ba098;
+    background: #e2252b;
     color:#222;
     font-size: 1.4em;
     cursor: pointer;
     border-radius: 12px;
+    transition:.4s ease;
+
 }
 button:hover{
-    background: #0af4e4;
+    background:red;
 }
 #mcq .choice:hover{
-    background: #0af4e4;
+    background: red;
 }
 #wrapper{
     width:100%;
