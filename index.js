@@ -4,6 +4,7 @@ let i=0;
 let isopenl=false;
 let isopenr=false;
 window.alert("Due to some mongo connection string Issue");
+window.alert("so you can't log in or sign in");
 window.alert("But you can access quiz app by open button");
 alert("Enjoy 😜");
 setInterval(()=>{
