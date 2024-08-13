@@ -104,5 +104,5 @@ function signin() {
  });
 }
 function open(){
-   window.location.href='quiz.html'
+   window.location.href="http://localhost:5000/quiz.html";
 }
